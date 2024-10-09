@@ -1,0 +1,5 @@
+pyfiglet
+pycryptodomex
+pywin32
+sqlite3
+tkinter
