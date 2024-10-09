@@ -51,3 +51,9 @@ python gui_version.py
 Use the Retrieve Secrets button to display all stored passwords.
 You can search through the displayed passwords using the search bar that appears after retrieving the passwords.
 If you want to save the passwords to a text file, click the Save to File button.
+# Credits
+
+This tool and process are inspired by the article:  
+**[How to decrypt Chrome password with Python?](https://medium.com/@yicongli/how-to-decrypt-chrome-password-with-python-4a42ab2a038d)**  
+by **Yicong**, published on January 5, 2021.
+
