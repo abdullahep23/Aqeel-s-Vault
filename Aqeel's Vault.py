@@ -1,3 +1,4 @@
+
 import os
 import json
 import base64
@@ -26,6 +27,7 @@ interesting_phrases = [
     "A password a day keeps the hackers away!",
     "Ssshh... it's a secret!"
 ]
+search_flag = False
 
 def retrieve_secret_key():
     try:
@@ -66,7 +68,7 @@ def connect_to_db(chrome_login_db):
 
 def get_chrome_passwords():
     secret_key = retrieve_secret_key()
-    profile_folders = [folder for folder in os.listdir(CHROME_USER_DATA_PATH) if folder.startswith("Profile") or folder == "Default"]
+    profile_folders = [folder for folder in os.listdir(CHROME_USER_DATA_PATH) if folder.startswith("Profile")]
     passwords = []
 
     for profile in profile_folders:
@@ -153,20 +155,25 @@ def search_passwords():
 
 # Create and show search functionality
 def show_search_functionality():
-    global search_frame, search_entry, search_button
-    search_frame = tk.Frame(root, bg="#424A63")  # Set the background color of the frame
-    search_frame.pack(padx=10, pady=10)
+    global search_frame, search_entry, search_button,search_flag
+    if search_flag == False:
+        search_flag=True
+        search_frame = tk.Frame(root, bg="#424A63")  # Set the background color of the frame
+        search_frame.pack(padx=10, pady=10)
 
-    search_entry = tk.Entry(search_frame, width=40, font=("Arial", 10))
-    search_entry.pack(side=tk.LEFT, padx=10)
+        search_entry = tk.Entry(search_frame, width=40, font=("Arial", 10))
+        search_entry.pack(side=tk.LEFT, padx=10)
 
-    search_button = tk.Button(search_frame, text="Search", command=search_passwords, bg="#B0EB83", fg="#060101", padx=10, pady=5)
-    search_button.pack(side=tk.LEFT, padx=10)
+        search_button = tk.Button(search_frame, text="Search", command=search_passwords, bg="#B0EB83", fg="#060101", padx=10, pady=5)
+        search_button.pack(side=tk.LEFT, padx=10)
 
 def hide_search_functionality():
+    global search_flag
     if 'search_frame' in globals():
         search_frame.pack_forget()  # Remove the search frame from the UI
-        search_frame.destroy()  # Destroy the search frame
+        search_frame.destroy()
+        search_flag=False
+        # Destroy the search frame
 
 root = tk.Tk()
 root.title("Aqeel's Vault")
