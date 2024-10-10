@@ -71,7 +71,3 @@ The GUI version is designed for ease of use when you have full access to the Win
 This tool is inspired by the article:  
 **[How to decrypt Chrome password with Python?](https://medium.com/@yicongli/how-to-decrypt-chrome-password-with-python-4a42ab2a038d)**  
 by **Yicong**, published on January 5, 2021.
-
----
-
-This markdown text is structured clearly, emphasizing the post-exploitation use of the tool, how to install it without Git, and provides both CLI and GUI instructions for Windows systems.
