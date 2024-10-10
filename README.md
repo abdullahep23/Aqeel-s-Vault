@@ -1,59 +1,77 @@
 # Aqeel's Vault
 
-**Aqeel's Vault** is a Python-based tool designed to retrieve saved passwords from Google Chrome, decrypt them, and display them in an easy-to-read format. It uses Chrome's encryption key and AES cryptography to decrypt the passwords that Chrome saves in an SQLite database. This tool allows users to see all stored passwords and export them to a text file if desired.
+**Aqeel's Vault** is a post-exploitation tool designed for **Windows** environments, aimed at extracting saved passwords from Google Chrome. The tool decrypts Chrome passwords that are stored locally on a compromised system using the system's encryption key and displays them in a readable format. This tool is useful for gathering credentials after gaining unauthorized access to a Windows machine.
 
-## Description
+> **Note**: This tool is strictly for educational and ethical use. Only use it on systems where you have explicit permission.
 
-It is undeniable that saving your passwords in Chrome is convenient. It helps you log in to websites automatically while ensuring that your passwords are encrypted. The only way for perpetrators to access your encrypted website passwords is to have your laptop username and password.
+## Features
 
-However, while Chrome makes it easy to auto-fill login forms, this creates a false sense of security. Chrome saves these passwords elsewhere in the application, in a location that is not always as secure as you might think.
+- Decrypt and display saved passwords from Google Chrome.
+- Export decrypted passwords to a text file for further analysis.
+- Random interesting phrases displayed with each password to keep the user engaged.
+- Supports both **Command-Line Interface (CLI)** and **Graphical User Interface (GUI)** versions for flexibility depending on how you access the system.
 
-## Key Features:
+## Tool Purpose
 
-- Decrypts saved Chrome passwords.
-- Displays passwords along with associated URLs and usernames.
-- Provides an option to export decrypted passwords to a text file.
-- Offers search functionality to filter results within the tool.
+This is a **post-exploitation tool** that can be used after gaining unauthorized access to a Windows system to retrieve saved Chrome passwords. Depending on how you access the system:
 
-## Requirements
+- **GUI Version**: Use this when you have full access to the system and can operate the GUI.
+- **CLI Version**: Use this when you only have access to the Windows terminal or command prompt.
 
-Make sure you have Python installed on your machine. To install the required packages, you can use `pip` to install the dependencies listed in `requirements.txt`:
+## Limitations
 
-```bash
-pip install -r requirements.txt
-```
-## Installation
-Clone the Repository
-Clone the tool repository to your local machine using Git:
-```bash
-git clone https://github.com/your-repo/aqeels-vault.git
-cd aqeels-vault
-```
-## Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+- This tool is intended for use on **Windows** machines where Chrome is installed and passwords are saved locally.
+- **Kali Linux**: The tool may not work correctly with Chrome installations on Kali Linux or other Linux-based systems due to differences in how encryption keys are stored and managed.
+
+## Installation (No Git Required)
+
+Since Git is not commonly installed on Windows machines, you can manually download the necessary files and run the tool without needing Git.
+
+### Steps:
+
+1. Download the **Aqeel's Vault** ZIP file from the release page (github page)
+2. Unzip the file to a location on your Windows system.
+3. Open a **Command Prompt** or **PowerShell** window in the unzipped folder.
+4. Install the required Python libraries using `pip`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 ## Running the Tool
-## For Command-Line Interface (CLI) Version:
-You can run the CLI version by using the following command:
-```bash
-python cli_version.py
-```
-Optionally, you can save the retrieved passwords to a text file:
-```bash
-python cli_version.py --save output.txt
-```
-For Graphical User Interface (GUI) Version:
-Run the following command to open the GUI interface:
-```bash
-python gui_version.py
-```
-Use the Retrieve Secrets button to display all stored passwords.
-You can search through the displayed passwords using the search bar that appears after retrieving the passwords.
-If you want to save the passwords to a text file, click the Save to File button.
-# Credits
 
-This tool and process are inspired by the article:  
+### Command-Line Interface (CLI) Version
+
+The CLI version is useful if you have access to the terminal or command prompt on the compromised Windows system.
+
+1. Navigate to the directory where Aqeel's Vault is located.
+2. Run the tool by typing:
+   ```bash
+   python cli_version.py
+   ```
+3. To save the retrieved passwords to a file:
+   ```bash
+   python cli_version.py --save output.txt
+   ```
+
+### Graphical User Interface (GUI) Version
+
+The GUI version is designed for ease of use when you have full access to the Windows machine, including the graphical interface.
+
+1. Open the **Command Prompt** in the directory where Aqeel's Vault is located.
+2. Run the GUI version using:
+   ```bash
+   python gui_version.py
+   ```
+3. Use the **Retrieve Secrets** button to extract stored passwords. You can also search through the passwords using the search bar.
+4. To save the retrieved passwords, click on **Save to File**.
+
+
+## Credits
+
+This tool is inspired by the article:  
 **[How to decrypt Chrome password with Python?](https://medium.com/@yicongli/how-to-decrypt-chrome-password-with-python-4a42ab2a038d)**  
 by **Yicong**, published on January 5, 2021.
 
+---
+
+This markdown text is structured clearly, emphasizing the post-exploitation use of the tool, how to install it without Git, and provides both CLI and GUI instructions for Windows systems.
