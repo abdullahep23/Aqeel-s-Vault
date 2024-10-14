@@ -46,11 +46,11 @@ The CLI version is useful if you have access to the terminal or command prompt o
 1. Navigate to the directory where Aqeel's Vault is located.
 2. Run the tool by typing:
    ```bash
-   python cli_version.py
+   python <tool_name(cli_version.py)>
    ```
 3. To save the retrieved passwords to a file:
    ```bash
-   python cli_version.py --save output.txt
+   python <tool_name(cli_version.py)> --save output.txt
    ```
 
 ### Graphical User Interface (GUI) Version
@@ -60,7 +60,7 @@ The GUI version is designed for ease of use when you have full access to the Win
 1. Open the **Command Prompt** in the directory where Aqeel's Vault is located.
 2. Run the GUI version using:
    ```bash
-   python gui_version.py
+   python <tool_name.py> 
    ```
 3. Use the **Retrieve Secrets** button to extract stored passwords. You can also search through the passwords using the search bar.
 4. To save the retrieved passwords, click on **Save to File**.
